@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Material</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Material for Project ID {{ pid }}</h2>
+        <form method="POST">
+            <!-- Material input fields -->
+            <input name="mid" placeholder="Material ID" required><br>
+            <input name="material_name" placeholder="Name" required><br>
+            <input name="quantity" placeholder="Quantity" required><br>
+            <input name="cost" placeholder="Cost" required><br>
+            <button type="submit">Add Material</button>
+        </form>
+    </div>
+</body>
+</html>

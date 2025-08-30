@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Material</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Material Details</h2>
+        <form method="POST">
+            <label for="material_name">Material Name</label>
+            <input type="text" name="material_name" id="material_name" value="{{ material[2] }}" required>
+
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity" id="quantity" value="{{ material[3] }}" required>
+
+            <label for="cost">Cost</label>
+            <input type="number" name="cost" id="cost" value="{{ material[4] }}" required>
+
+            <button type="submit">Update Material</button>
+        </form>
+    <a href="{{ url_for('contractor_dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

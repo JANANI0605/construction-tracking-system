@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Construction Project Tracker</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #004080;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #004080;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .login-btn {
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 18px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #00264d;
+        }
+
+        .features-section {
+            background-color: #e6e6e6;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            color: #004080;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 250px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        .feature-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature-btn:hover {
+            background-color: #00264d;
+        }
+
+        .feature-details {
+            display: none;
+            margin-top: 15px;
+            text-align: left;
+            font-size: 14px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Construction Project Tracker</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="container">
+            <h2>Welcome to Construction Project Tracker</h2>
+            <p>
+                This platform is designed to help contractors and project managers efficiently monitor and manage construction activities. Keep track of progress, assignments, and updates all in one place. Let's build smarter, together.
+            </p>
+
+            <!-- Login Button -->
+   <a class="login-btn" href="{{ url_for('login') }}">Login</a>
+
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2>Our Features</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Manage Contractor</h3>
+                <button class="feature-btn" onclick="toggleDetails('contractor-details')">Explore</button>
+                <div id="contractor-details" class="feature-details">
+                    Add, update, and view contractor details. Assign them to specific projects and monitor their work progress.
+                </div>
+            </div>
+            <div class="feature-card">
+                <h3>Manage Project</h3>
+                <button class="feature-btn" onclick="toggleDetails('project-details')">Explore</button>
+                <div id="project-details" class="feature-details">
+                    Create and manage construction projects. Track deadlines, budgets, and allocate resources efficiently.
+                </div>
+            </div>
+            <div class="feature-card">
+                <h3>Manage Materials</h3>
+                <button class="feature-btn" onclick="toggleDetails('materials-details')">Explore</button>
+                <div id="materials-details" class="feature-details">
+                    Keep track of materials inventory, procurement status, and ensure timely availability for each project phase.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>

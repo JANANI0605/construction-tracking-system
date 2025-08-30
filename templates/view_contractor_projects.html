@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Projects</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Area</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proj in projects %}
+                <tr>
+                    <td>{{ proj[0] }}</td>
+                    <td>{{ proj[1] }}</td>
+                    <td>{{ proj[2] }}</td>
+                    <td>{{ proj[6] }}</td>
+                    <td>{{ proj[7] }}</td>
+                    <td>{{ proj[8] }}</td>
+                    <td>
+                        <a href="{{ url_for('view_project_materials', pid=proj[0]) }}">Manage Materials</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

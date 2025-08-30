@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Add New Payment</h2>
+        <form method="POST">
+            <div>
+                <label for="payment_id">Payment ID:</label>
+                <input type="text" name="payment_id" required>
+            </div>
+            <div>
+                <label for="paid_date">Paid Date:</label>
+                <input type="date" name="paid_date" required>
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount" step="0.01" required>
+            </div>
+            <div>
+                <label for="pid">Project ID:</label>
+                <input type="number" name="pid" required>
+            </div>
+            <button type="submit">Add Payment</button>
+        </form>
+
+        <br>
+        <a href="{{ url_for('track_payments') }}">Back to Payments</a>
+    </div>
+</body>
+</html>

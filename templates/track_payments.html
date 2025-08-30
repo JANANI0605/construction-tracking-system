@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Your Payments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Your Payments</h2>
+
+        <!-- Add New Payment Button -->
+        <a href="{{ url_for('add_payment') }}">
+            <button>Add New Payment</button>
+        </a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Paid Date</th>
+                    <th>Amount</th>
+                    <th>Project Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for payment in payments %}
+                <tr>
+                    <td>{{ payment.payment_id }}</td>
+                    <td>{{ payment.paid_date }}</td>
+                    <td>{{ payment.amount }}</td>
+                    <td>{{ payment.project_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <a href="{{ url_for('contractor_dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

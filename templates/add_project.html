@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Project</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+<body>
+    <h2>Add New Project</h2>
+ <div class="container">
+    <form method="POST">
+        <label for="pid">Project ID</label>
+        <input type="text" id="pid" name="pid" required>
+
+        <label for="name">Project Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="status">Status</label>
+        <input type="text" id="status" name="status" required>
+
+        <label for="cost">Cost per Sq. Ft.</label>
+        <input type="number" id="cost" name="cost" step="0.01" required>
+
+        <label for="area">Area Covered (sq. ft.)</label>
+        <input type="number" id="area" name="area" step="0.01" required>
+
+        <label for="start_date">Start Date</label>
+        <input type="date" id="start_date" name="start_date" required>
+
+        <label for="end_date">End Date</label>
+        <input type="date" id="end_date" name="end_date" >
+
+        <label for="cust_id">Customer ID</label>
+        <input type="text" id="cust_id" name="cust_id" >
+
+        <button type="submit">Create Project</button>
+
+    </form>
+    <a href="{{ url_for('contractor_dashboard') }}">Back to Dashboard</a>
+  </div>
+</body>
+</html>

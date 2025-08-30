@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contractor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Contractor</h1>
+
+        <h2>1. Start a New Project</h2>
+        <form action="{{ url_for('add_project') }}" method="get">
+            <button type="submit">Add New Project</button>
+        </form>
+
+        <h2>2. Project and Materials</h2>
+        <form action="{{ url_for('view_projects') }}" method="get">
+            <button type="submit">View Projects & Materials</button>
+        </form>
+
+        <h2>3. Track Payments</h2>
+        <form action="{{ url_for('track_payments') }}" method="get">
+            <button type="submit">Track Payments</button>
+<a href="{{ url_for('login') }}">Back to Dashboard</a>
+        </form>
+    </div>
+    
+</body>
+</html>

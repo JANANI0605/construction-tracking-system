@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="main-content">
+        <!-- Container for the content -->
+        <div class="container">
+            <h2>Welcome, Customer!</h2>
+
+            <h3>Your Details</h3>
+            <form method="POST" action="{{ url_for('update_customer_details') }}">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" value="{{ customer.name }}" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" name="phone_no" value="{{ customer.phone_no }}" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" value="{{ customer.address }}" required><br>
+                </div>
+                <button type="submit">Update Details</button>
+            </form>
+        </div>
+    </div>
+            <h3>Your Projects</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Status</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in details %}
+                    <tr>
+                        <td>{{ d.name }}</td>
+                        <td>{{ d.status }}</td>
+                        <td>{{ d.start_date }}</td>
+                        <td>{{ d.end_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Your Contractor</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Speciality</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in details %}
+                    <tr>
+                        <td>{{ d.contractor_name }}</td>
+                        <td>{{ d.speciality }}</td>
+                        <td>{{ d.contact }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <h3>Your Payments</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Paid Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for payment in payments %}
+                    <tr>
+                        <td>{{ payment.amount }}</td>
+                        <td>{{ payment.paid_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table> 
+
+
+</body>
+</html>
