@@ -46,7 +46,7 @@ cd construction-tracking-system
 
 2. Create and activate virtual environment:
 python -m venv venv
-Windows:
+**Windows:**
 venv\Scripts\activate
 
 3. Install dependencies:
